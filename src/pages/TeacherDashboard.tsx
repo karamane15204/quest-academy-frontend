@@ -1,16 +1,17 @@
-
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Users, BookOpen, Video, FileText, Calendar, CheckCircle, Plus, Upload } from 'lucide-react';
+import { Users, BookOpen, Video, FileText, Calendar, CheckCircle, Plus, Upload, ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const navigate = useNavigate();
 
   const courses = [
     {
@@ -57,6 +58,18 @@ const TeacherDashboard = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
+        {/* Go Back Button */}
+        <div className="mb-6">
+          <Button 
+            variant="outline" 
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Button>
+        </div>
+
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Teacher Dashboard</h1>
