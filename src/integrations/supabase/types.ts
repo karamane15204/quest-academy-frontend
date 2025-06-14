@@ -9,7 +9,293 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      achievements: {
+        Row: {
+          description: string | null
+          earned_at: string
+          icon: string | null
+          id: string
+          student_id: string
+          title: string
+        }
+        Insert: {
+          description?: string | null
+          earned_at?: string
+          icon?: string | null
+          id?: string
+          student_id: string
+          title: string
+        }
+        Update: {
+          description?: string | null
+          earned_at?: string
+          icon?: string | null
+          id?: string
+          student_id?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "achievements_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      assignment_submissions: {
+        Row: {
+          assignment_id: string
+          content: string | null
+          file_url: string | null
+          graded_at: string | null
+          id: string
+          points_earned: number | null
+          student_id: string
+          submitted_at: string
+        }
+        Insert: {
+          assignment_id: string
+          content?: string | null
+          file_url?: string | null
+          graded_at?: string | null
+          id?: string
+          points_earned?: number | null
+          student_id: string
+          submitted_at?: string
+        }
+        Update: {
+          assignment_id?: string
+          content?: string | null
+          file_url?: string | null
+          graded_at?: string | null
+          id?: string
+          points_earned?: number | null
+          student_id?: string
+          submitted_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assignment_submissions_assignment_id_fkey"
+            columns: ["assignment_id"]
+            isOneToOne: false
+            referencedRelation: "assignments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "assignment_submissions_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      assignments: {
+        Row: {
+          assignment_type: Database["public"]["Enums"]["assignment_type"]
+          course_id: string
+          created_at: string
+          description: string | null
+          due_date: string | null
+          id: string
+          max_points: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          assignment_type?: Database["public"]["Enums"]["assignment_type"]
+          course_id: string
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          max_points?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          assignment_type?: Database["public"]["Enums"]["assignment_type"]
+          course_id?: string
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          max_points?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assignments_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      course_materials: {
+        Row: {
+          content: string | null
+          course_id: string
+          created_at: string
+          file_url: string | null
+          id: string
+          material_type: string
+          order_index: number | null
+          title: string
+        }
+        Insert: {
+          content?: string | null
+          course_id: string
+          created_at?: string
+          file_url?: string | null
+          id?: string
+          material_type: string
+          order_index?: number | null
+          title: string
+        }
+        Update: {
+          content?: string | null
+          course_id?: string
+          created_at?: string
+          file_url?: string | null
+          id?: string
+          material_type?: string
+          order_index?: number | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_materials_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      courses: {
+        Row: {
+          course_type: Database["public"]["Enums"]["course_type"]
+          created_at: string
+          description: string | null
+          duration_hours: number | null
+          id: string
+          instructor_id: string
+          status: Database["public"]["Enums"]["course_status"]
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          course_type?: Database["public"]["Enums"]["course_type"]
+          created_at?: string
+          description?: string | null
+          duration_hours?: number | null
+          id?: string
+          instructor_id: string
+          status?: Database["public"]["Enums"]["course_status"]
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          course_type?: Database["public"]["Enums"]["course_type"]
+          created_at?: string
+          description?: string | null
+          duration_hours?: number | null
+          id?: string
+          instructor_id?: string
+          status?: Database["public"]["Enums"]["course_status"]
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "courses_instructor_id_fkey"
+            columns: ["instructor_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      enrollments: {
+        Row: {
+          completed_at: string | null
+          course_id: string
+          enrolled_at: string
+          id: string
+          progress_percentage: number | null
+          student_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          course_id: string
+          enrolled_at?: string
+          id?: string
+          progress_percentage?: number | null
+          student_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          course_id?: string
+          enrolled_at?: string
+          id?: string
+          progress_percentage?: number | null
+          student_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enrollments_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          first_name: string | null
+          id: string
+          last_name: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -18,7 +304,10 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      assignment_type: "quiz" | "project" | "assignment" | "game"
+      course_status: "draft" | "published" | "archived"
+      course_type: "traditional" | "game_based"
+      user_role: "student" | "teacher" | "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -133,6 +422,11 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      assignment_type: ["quiz", "project", "assignment", "game"],
+      course_status: ["draft", "published", "archived"],
+      course_type: ["traditional", "game_based"],
+      user_role: ["student", "teacher", "admin"],
+    },
   },
 } as const

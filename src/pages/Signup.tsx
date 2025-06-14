@@ -7,39 +7,74 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, BookOpen, Users } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
 import Navbar from '@/components/Navbar';
 
 const Signup = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [selectedRole, setSelectedRole] = useState<'student' | 'teacher'>('student');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signUp } = useAuth();
+  const { toast } = useToast();
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
+    if (password !== confirmPassword) {
+      toast({
+        title: "Password Mismatch",
+        description: "Passwords do not match. Please try again.",
+        variant: "destructive",
+      });
       return;
     }
 
-    // Simulate signup process
-    console.log('Signup attempt:', { ...formData, role: selectedRole });
-    
-    // Redirect based on selected role
-    navigate(`/dashboard/${selectedRole}`);
-  };
+    if (password.length < 6) {
+      toast({
+        title: "Password Too Short",
+        description: "Password must be at least 6 characters long.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setIsLoading(true);
+    
+    try {
+      const { error } = await signUp(email, password, {
+        first_name: firstName,
+        last_name: lastName,
+        role: selectedRole
+      });
+      
+      if (error) {
+        toast({
+          title: "Signup Failed",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Account Created Successfully!",
+          description: "Please check your email to verify your account.",
+        });
+        navigate('/login');
+      }
+    } catch (error) {
+      toast({
+        title: "Signup Failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const roleOptions = [
@@ -64,7 +99,6 @@ const Signup = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
-        {/* Go Back Button */}
         <div className="mb-6">
           <Button 
             variant="outline" 
@@ -79,12 +113,38 @@ const Signup = () => {
         <div className="max-w-md mx-auto">
           <Card className="shadow-xl bg-white">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold" style={{ color: '#3E2723' }}>Sign Up</CardTitle>
-              <CardDescription className="text-gray-600">Create your account to get started</CardDescription>
+              <CardTitle className="text-2xl font-bold" style={{ color: '#3E2723' }}>Create Account</CardTitle>
+              <CardDescription className="text-gray-600">Join our learning platform today</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSignup} className="space-y-6">
-                {/* Role Selection */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" style={{ color: '#3E2723' }}>First Name</Label>
+                    <Input
+                      id="firstName"
+                      type="text"
+                      placeholder="First name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                      className="border-gray-300 focus:border-teal-500"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" style={{ color: '#3E2723' }}>Last Name</Label>
+                    <Input
+                      id="lastName"
+                      type="text"
+                      placeholder="Last name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                      className="border-gray-300 focus:border-teal-500"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-3">
                   <Label className="text-sm font-medium" style={{ color: '#3E2723' }}>Select Your Role</Label>
                   <div className="grid gap-3">
@@ -115,61 +175,27 @@ const Signup = () => {
                   </div>
                 </div>
 
-                {/* Name Inputs */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" style={{ color: '#3E2723' }}>First Name</Label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      type="text"
-                      placeholder="First name"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      required
-                      className="border-gray-300 focus:border-teal-500"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" style={{ color: '#3E2723' }}>Last Name</Label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      type="text"
-                      placeholder="Last name"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      required
-                      className="border-gray-300 focus:border-teal-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Email Input */}
                 <div className="space-y-2">
                   <Label htmlFor="email" style={{ color: '#3E2723' }}>Email</Label>
                   <Input
                     id="email"
-                    name="email"
                     type="email"
                     placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={handleInputChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="border-gray-300 focus:border-teal-500"
                   />
                 </div>
 
-                {/* Password Inputs */}
                 <div className="space-y-2">
                   <Label htmlFor="password" style={{ color: '#3E2723' }}>Password</Label>
                   <Input
                     id="password"
-                    name="password"
                     type="password"
-                    placeholder="Create a password"
-                    value={formData.password}
-                    onChange={handleInputChange}
+                    placeholder="Create a password (min. 6 characters)"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                     className="border-gray-300 focus:border-teal-500"
                   />
@@ -179,27 +205,25 @@ const Signup = () => {
                   <Label htmlFor="confirmPassword" style={{ color: '#3E2723' }}>Confirm Password</Label>
                   <Input
                     id="confirmPassword"
-                    name="confirmPassword"
                     type="password"
                     placeholder="Confirm your password"
-                    value={formData.confirmPassword}
-                    onChange={handleInputChange}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                     className="border-gray-300 focus:border-teal-500"
                   />
                 </div>
 
-                {/* Submit Button */}
                 <Button 
                   type="submit" 
                   className="w-full text-white hover:opacity-90"
                   style={{ backgroundColor: '#007D7A' }}
+                  disabled={isLoading}
                 >
-                  Create Account
+                  {isLoading ? 'Creating Account...' : 'Create Account'}
                 </Button>
               </form>
 
-              {/* Sign In Link */}
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   Already have an account?{' '}
