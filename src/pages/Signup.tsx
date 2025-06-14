@@ -48,19 +48,19 @@ const Signup = () => {
       title: 'Student',
       description: 'Access courses and track progress',
       icon: <BookOpen className="h-6 w-6" />,
-      color: '#99CDD8'
+      color: '#007D7A'
     },
     {
       id: 'teacher',
       title: 'Teacher',
       description: 'Create content and manage students',
       icon: <Users className="h-6 w-6" />,
-      color: '#E8B4B8'
+      color: '#FF7F50'
     }
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5DC' }}>
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -79,14 +79,14 @@ const Signup = () => {
         <div className="max-w-md mx-auto">
           <Card className="shadow-xl bg-white">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold" style={{ color: '#657165' }}>Sign Up</CardTitle>
+              <CardTitle className="text-2xl font-bold" style={{ color: '#3E2723' }}>Sign Up</CardTitle>
               <CardDescription className="text-gray-600">Create your account to get started</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSignup} className="space-y-6">
                 {/* Role Selection */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium" style={{ color: '#657165' }}>Select Your Role</Label>
+                  <Label className="text-sm font-medium" style={{ color: '#3E2723' }}>Select Your Role</Label>
                   <div className="grid gap-3">
                     {roleOptions.map((role) => (
                       <div
@@ -103,11 +103,11 @@ const Signup = () => {
                             {role.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium" style={{ color: '#657165' }}>{role.title}</div>
+                            <div className="font-medium" style={{ color: '#3E2723' }}>{role.title}</div>
                             <div className="text-sm text-gray-500">{role.description}</div>
                           </div>
                           {selectedRole === role.id && (
-                            <Badge style={{ backgroundColor: '#99CDD8', color: 'white' }}>Selected</Badge>
+                            <Badge style={{ backgroundColor: '#007D7A', color: 'white' }}>Selected</Badge>
                           )}
                         </div>
                       </div>
@@ -118,7 +118,7 @@ const Signup = () => {
                 {/* Name Inputs */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName" style={{ color: '#657165' }}>First Name</Label>
+                    <Label htmlFor="firstName" style={{ color: '#3E2723' }}>First Name</Label>
                     <Input
                       id="firstName"
                       name="firstName"
@@ -131,7 +131,7 @@ const Signup = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName" style={{ color: '#657165' }}>Last Name</Label>
+                    <Label htmlFor="lastName" style={{ color: '#3E2723' }}>Last Name</Label>
                     <Input
                       id="lastName"
                       name="lastName"
@@ -147,7 +147,7 @@ const Signup = () => {
 
                 {/* Email Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" style={{ color: '#657165' }}>Email</Label>
+                  <Label htmlFor="email" style={{ color: '#3E2723' }}>Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -162,7 +162,7 @@ const Signup = () => {
 
                 {/* Password Inputs */}
                 <div className="space-y-2">
-                  <Label htmlFor="password" style={{ color: '#657165' }}>Password</Label>
+                  <Label htmlFor="password" style={{ color: '#3E2723' }}>Password</Label>
                   <Input
                     id="password"
                     name="password"
@@ -176,7 +176,7 @@ const Signup = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword" style={{ color: '#657165' }}>Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" style={{ color: '#3E2723' }}>Confirm Password</Label>
                   <Input
                     id="confirmPassword"
                     name="confirmPassword"
@@ -193,7 +193,7 @@ const Signup = () => {
                 <Button 
                   type="submit" 
                   className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#99CDD8' }}
+                  style={{ backgroundColor: '#007D7A' }}
                 >
                   Create Account
                 </Button>
@@ -203,7 +203,7 @@ const Signup = () => {
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   Already have an account?{' '}
-                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#E8B4B8' }}>
+                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#FF7F50' }}>
                     Sign in here
                   </Link>
                 </p>

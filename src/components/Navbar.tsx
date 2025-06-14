@@ -12,10 +12,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#99CDD8' }}>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#007D7A' }}>
               <BookOpen className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold" style={{ color: '#657165' }}>
+            <span className="text-xl font-bold" style={{ color: '#3E2723' }}>
               E-Learn Platform
             </span>
           </div>
@@ -29,14 +29,14 @@ const Navbar = () => {
             <Button 
               variant="outline" 
               className="text-gray-700 hover:bg-gray-100"
-              style={{ borderColor: '#E8B4B8' }}
+              style={{ borderColor: '#FF7F50' }}
               onClick={() => window.location.href = '/login'}
             >
               Sign In
             </Button>
             <Button 
               className="text-white hover:opacity-90"
-              style={{ backgroundColor: '#99CDD8' }}
+              style={{ backgroundColor: '#007D7A' }}
               onClick={() => window.location.href = '/signup'}
             >
               Get Started
@@ -67,14 +67,14 @@ const Navbar = () => {
                 <Button 
                   variant="outline" 
                   className="text-gray-700 hover:bg-gray-100"
-                  style={{ borderColor: '#E8B4B8' }}
+                  style={{ borderColor: '#FF7F50' }}
                   onClick={() => window.location.href = '/login'}
                 >
                   Sign In
                 </Button>
                 <Button 
                   className="text-white hover:opacity-90"
-                  style={{ backgroundColor: '#99CDD8' }}
+                  style={{ backgroundColor: '#007D7A' }}
                   onClick={() => window.location.href = '/signup'}
                 >
                   Get Started

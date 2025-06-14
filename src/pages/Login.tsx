@@ -27,19 +27,19 @@ const Login = () => {
       title: 'Student',
       description: 'Access courses and track progress',
       icon: <BookOpen className="h-6 w-6" />,
-      color: '#99CDD8'
+      color: '#007D7A'
     },
     {
       id: 'teacher',
       title: 'Teacher',
       description: 'Create content and manage students',
       icon: <Users className="h-6 w-6" />,
-      color: '#E8B4B8'
+      color: '#FF7F50'
     }
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5DC' }}>
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -57,13 +57,13 @@ const Login = () => {
         <div className="max-w-md mx-auto">
           <Card className="shadow-xl bg-white">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold" style={{ color: '#657165' }}>Sign In</CardTitle>
+              <CardTitle className="text-2xl font-bold" style={{ color: '#3E2723' }}>Sign In</CardTitle>
               <CardDescription className="text-gray-600">Welcome back! Please sign in to your account</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleLogin} className="space-y-6">
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium" style={{ color: '#657165' }}>Select Your Role</Label>
+                  <Label className="text-sm font-medium" style={{ color: '#3E2723' }}>Select Your Role</Label>
                   <div className="grid gap-3">
                     {roleOptions.map((role) => (
                       <div
@@ -80,11 +80,11 @@ const Login = () => {
                             {role.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium" style={{ color: '#657165' }}>{role.title}</div>
+                            <div className="font-medium" style={{ color: '#3E2723' }}>{role.title}</div>
                             <div className="text-sm text-gray-500">{role.description}</div>
                           </div>
                           {selectedRole === role.id && (
-                            <Badge style={{ backgroundColor: '#99CDD8', color: 'white' }}>Selected</Badge>
+                            <Badge style={{ backgroundColor: '#007D7A', color: 'white' }}>Selected</Badge>
                           )}
                         </div>
                       </div>
@@ -93,7 +93,7 @@ const Login = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" style={{ color: '#657165' }}>Email</Label>
+                  <Label htmlFor="email" style={{ color: '#3E2723' }}>Email</Label>
                   <Input
                     id="email"
                     type="email"
@@ -106,7 +106,7 @@ const Login = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password" style={{ color: '#657165' }}>Password</Label>
+                  <Label htmlFor="password" style={{ color: '#3E2723' }}>Password</Label>
                   <Input
                     id="password"
                     type="password"
@@ -121,7 +121,7 @@ const Login = () => {
                 <Button 
                   type="submit" 
                   className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#99CDD8' }}
+                  style={{ backgroundColor: '#007D7A' }}
                 >
                   Sign In
                 </Button>
@@ -130,7 +130,7 @@ const Login = () => {
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   Don't have an account?{' '}
-                  <Link to="/signup" className="font-medium hover:underline" style={{ color: '#E8B4B8' }}>
+                  <Link to="/signup" className="font-medium hover:underline" style={{ color: '#FF7F50' }}>
                     Sign up here
                   </Link>
                 </p>

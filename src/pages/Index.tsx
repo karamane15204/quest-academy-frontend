@@ -52,16 +52,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5DC' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center max-w-4xl mx-auto">
-          <Badge className="mb-4 text-white" style={{ backgroundColor: '#99CDD8' }}>
+          <Badge className="mb-4 text-white" style={{ backgroundColor: '#007D7A' }}>
             Next Generation Learning Platform
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#657165' }}>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#3E2723' }}>
             Welcome to E-Learn Platform
           </h1>
           <p className="text-xl mb-8 leading-relaxed text-gray-700">
@@ -74,14 +74,14 @@ const Index = () => {
             <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('student')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#99CDD8' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#007D7A' }}>
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Student Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#3E2723' }}>Student Portal</CardTitle>
                 <CardDescription>Access courses, track progress, and learn interactively</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#99CDD8' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#007D7A' }}>
                   Enter as Student <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -90,14 +90,14 @@ const Index = () => {
             <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('teacher')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#E8B4B8' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#FF7F50' }}>
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Teacher Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#3E2723' }}>Teacher Portal</CardTitle>
                 <CardDescription>Create content, manage students, and track performance</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#E8B4B8' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#FF7F50' }}>
                   Enter as Teacher <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -106,14 +106,14 @@ const Index = () => {
             <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('admin')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#657165' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#3E2723' }}>
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Admin Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#3E2723' }}>Admin Portal</CardTitle>
                 <CardDescription>Manage platform, users, and system settings</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#657165' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#3E2723' }}>
                   Enter as Admin <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -126,7 +126,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#657165' }}>Powerful Learning Features</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#3E2723' }}>Powerful Learning Features</h2>
             <p className="text-xl text-gray-600">Everything you need for effective online education</p>
           </div>
           
@@ -134,10 +134,10 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 bg-white">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#F7DDD2', color: '#E8B4B8' }}>
+                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#F5B895', color: '#FF7F50' }}>
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl" style={{ color: '#657165' }}>{feature.title}</CardTitle>
+                  <CardTitle className="text-xl" style={{ color: '#3E2723' }}>{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">{feature.description}</CardDescription>
@@ -149,15 +149,15 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
+      <section className="py-20" style={{ backgroundColor: '#F5F5DC' }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold" style={{ color: '#99CDD8' }}>
+                <div className="text-4xl font-bold" style={{ color: '#007D7A' }}>
                   {stat.number}
                 </div>
-                <div className="font-medium" style={{ color: '#657165' }}>{stat.label}</div>
+                <div className="font-medium" style={{ color: '#3E2723' }}>{stat.label}</div>
               </div>
             ))}
           </div>

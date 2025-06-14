@@ -3,13 +3,13 @@ import { BookOpen, Facebook, Twitter, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#657165' }} className="text-white">
+    <footer style={{ backgroundColor: '#3E2723' }} className="text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#99CDD8' }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#007D7A' }}>
                 <BookOpen className="h-5 w-5 text-white" />
               </div>
               <span className="text-lg font-bold">E-Learn Platform</span>
@@ -18,10 +18,10 @@ const Footer = () => {
               Empowering learners worldwide with innovative educational technology and interactive learning experiences.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#E8B4B8' }} />
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#E8B4B8' }} />
-              <Instagram className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#E8B4B8' }} />
-              <Mail className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#E8B4B8' }} />
+              <Facebook className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#FF7F50' }} />
+              <Twitter className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#FF7F50' }} />
+              <Instagram className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#FF7F50' }} />
+              <Mail className="h-5 w-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" style={{ color: '#FF7F50' }} />
             </div>
           </div>
 

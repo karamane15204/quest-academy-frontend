@@ -43,9 +43,9 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5DC' }}>
       {/* Admin Header */}
-      <div style={{ backgroundColor: '#657165' }} className="text-white p-4">
+      <div style={{ backgroundColor: '#3E2723' }} className="text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Button 
@@ -71,13 +71,13 @@ const AdminDashboard = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2" style={{ color: '#657165' }}>Admin Dashboard</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#3E2723' }}>Admin Dashboard</h1>
           <p className="text-gray-600">Manage users, courses, and monitor platform performance.</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card style={{ backgroundColor: '#99CDD8', color: 'white' }}>
+          <Card style={{ backgroundColor: '#007D7A', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#E8B4B8', color: 'white' }}>
+          <Card style={{ backgroundColor: '#FF7F50', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -103,7 +103,7 @@ const AdminDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#657165', color: 'white' }}>
+          <Card style={{ backgroundColor: '#3E2723', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -116,7 +116,7 @@ const AdminDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #99CDD8, #657165)' }}>
+          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #007D7A, #3E2723)' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>

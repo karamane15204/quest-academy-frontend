@@ -55,7 +55,7 @@ const TeacherDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5DC' }}>
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -73,13 +73,13 @@ const TeacherDashboard = () => {
 
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2" style={{ color: '#657165' }}>Teacher Dashboard</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#3E2723' }}>Teacher Dashboard</h1>
           <p className="text-gray-600">Manage your courses, track student progress, and create engaging content.</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card style={{ backgroundColor: '#657165', color: 'white' }}>
+          <Card style={{ backgroundColor: '#3E2723', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -91,7 +91,7 @@ const TeacherDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#99CDD8', color: 'white' }}>
+          <Card style={{ backgroundColor: '#007D7A', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -103,7 +103,7 @@ const TeacherDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#E8B4B8', color: 'white' }}>
+          <Card style={{ backgroundColor: '#FF7F50', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -115,7 +115,7 @@ const TeacherDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #99CDD8, #657165)' }}>
+          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #007D7A, #3E2723)' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
