@@ -27,7 +27,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen" style={{ backgroundColor: '#324047' }}>
       <div className="container mx-auto px-4 py-8">
         {/* Go Back Button */}
         <div className="mb-6">
@@ -42,21 +42,21 @@ const AdminLogin = () => {
         </div>
 
         <div className="max-w-md mx-auto">
-          <Card className="shadow-2xl bg-white/5 border-white/10">
+          <Card className="shadow-2xl bg-white/95 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4">
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00AAAA' }}>
                 <Shield className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-2xl font-bold text-white">Admin Access</CardTitle>
-              <CardDescription className="text-gray-300">
+              <CardTitle className="text-2xl font-bold" style={{ color: '#324047' }}>Admin Access</CardTitle>
+              <CardDescription className="text-gray-600">
                 Restricted area - Authorized personnel only
               </CardDescription>
             </CardHeader>
             <CardContent>
               {error && (
-                <Alert className="mb-6 bg-red-500/10 border-red-500/20">
-                  <AlertTriangle className="h-4 w-4 text-red-400" />
-                  <AlertDescription className="text-red-300">
+                <Alert className="mb-6 bg-red-50 border-red-200">
+                  <AlertTriangle className="h-4 w-4 text-red-500" />
+                  <AlertDescription className="text-red-700">
                     {error}
                   </AlertDescription>
                 </Alert>
@@ -64,7 +64,7 @@ const AdminLogin = () => {
 
               <form onSubmit={handleAdminLogin} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white">Email</Label>
+                  <Label htmlFor="email" style={{ color: '#324047' }}>Email</Label>
                   <Input
                     id="email"
                     type="email"
@@ -72,12 +72,12 @@ const AdminLogin = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="border-gray-300 focus:border-teal-500"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-white">Password</Label>
+                  <Label htmlFor="password" style={{ color: '#324047' }}>Password</Label>
                   <Input
                     id="password"
                     type="password"
@@ -85,29 +85,30 @@ const AdminLogin = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="border-gray-300 focus:border-teal-500"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white"
+                  className="w-full text-white hover:opacity-90"
+                  style={{ backgroundColor: '#00AAAA' }}
                 >
                   Access Admin Panel
                 </Button>
               </form>
 
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600">
                   Not an admin?{' '}
-                  <Link to="/login" className="text-blue-400 hover:text-blue-300 font-medium">
+                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#00AAAA' }}>
                     Regular login here
                   </Link>
                 </p>
               </div>
 
-              <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-xs text-yellow-300 text-center">
+              <div className="mt-4 p-3 rounded-lg" style={{ backgroundColor: '#EFEFEF' }}>
+                <p className="text-xs text-center" style={{ color: '#324047' }}>
                   Demo credentials: admin@example.com / admin123
                 </p>
               </div>
