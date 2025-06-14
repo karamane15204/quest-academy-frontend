@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, BookOpen, Users, Award } from 'lucide-react';
+import { ArrowLeft, BookOpen, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 const Signup = () => {
@@ -17,7 +16,7 @@ const Signup = () => {
     password: '',
     confirmPassword: ''
   });
-  const [selectedRole, setSelectedRole] = useState<'student' | 'teacher' | 'admin'>('student');
+  const [selectedRole, setSelectedRole] = useState<'student' | 'teacher'>('student');
   const navigate = useNavigate();
 
   const handleSignup = (e: React.FormEvent) => {
@@ -56,13 +55,6 @@ const Signup = () => {
       description: 'Create content and manage students',
       icon: <Users className="h-6 w-6" />,
       color: 'from-purple-500 to-purple-600'
-    },
-    {
-      id: 'admin',
-      title: 'Admin',
-      description: 'Manage platform and users',
-      icon: <Award className="h-6 w-6" />,
-      color: 'from-indigo-500 to-indigo-600'
     }
   ];
 
@@ -103,7 +95,7 @@ const Signup = () => {
                             ? 'border-blue-500 bg-blue-50'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
-                        onClick={() => setSelectedRole(role.id as 'student' | 'teacher' | 'admin')}
+                        onClick={() => setSelectedRole(role.id as 'student' | 'teacher')}
                       >
                         <div className="flex items-center space-x-3">
                           <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${role.color} flex items-center justify-center text-white`}>
