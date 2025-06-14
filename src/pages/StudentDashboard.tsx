@@ -60,7 +60,7 @@ const StudentDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#384358' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -69,7 +69,7 @@ const StudentDashboard = () => {
           <Button 
             variant="outline" 
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+            className="flex items-center gap-2 border-gray-300 text-gray-700 hover:bg-gray-100"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Home
@@ -78,13 +78,13 @@ const StudentDashboard = () => {
 
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2 text-white">Welcome back, Student!</h1>
-          <p className="text-gray-200">Continue your learning journey and track your progress.</p>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#324047' }}>Welcome back, Student!</h1>
+          <p className="text-gray-600">Continue your learning journey and track your progress.</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card className="text-white" style={{ backgroundColor: '#FFA566' }}>
+          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #00CECE, #00AAAA)' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -96,7 +96,7 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-white" style={{ backgroundColor: '#DA1A68' }}>
+          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #00AAAA, #324047)' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -108,7 +108,7 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#1A0530', color: 'white' }}>
+          <Card style={{ backgroundColor: '#324047', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -120,7 +120,7 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#554754', color: 'white' }}>
+          <Card style={{ backgroundColor: '#00CECE', color: 'white' }}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -135,20 +135,20 @@ const StudentDashboard = () => {
 
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 bg-white/90 border-gray-200">
-            <TabsTrigger value="courses" className="flex items-center gap-2 data-[state=active]:bg-orange-100 data-[state=active]:text-orange-700" style={{ color: '#1A0530' }}>
+          <TabsList className="grid w-full grid-cols-4 bg-white border-gray-200">
+            <TabsTrigger value="courses" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
               <BookOpen className="h-4 w-4" />
               My Courses
             </TabsTrigger>
-            <TabsTrigger value="assignments" className="flex items-center gap-2 data-[state=active]:bg-orange-100 data-[state=active]:text-orange-700" style={{ color: '#1A0530' }}>
+            <TabsTrigger value="assignments" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
               <Calendar className="h-4 w-4" />
               Assignments
             </TabsTrigger>
-            <TabsTrigger value="games" className="flex items-center gap-2 data-[state=active]:bg-orange-100 data-[state=active]:text-orange-700" style={{ color: '#1A0530' }}>
+            <TabsTrigger value="games" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
               <Play className="h-4 w-4" />
               Games
             </TabsTrigger>
-            <TabsTrigger value="achievements" className="flex items-center gap-2 data-[state=active]:bg-orange-100 data-[state=active]:text-orange-700" style={{ color: '#1A0530' }}>
+            <TabsTrigger value="achievements" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
               <Award className="h-4 w-4" />
               Achievements
             </TabsTrigger>
@@ -157,18 +157,18 @@ const StudentDashboard = () => {
           <TabsContent value="courses" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {courses.map((course) => (
-                <Card key={course.id} className="hover:shadow-lg transition-shadow duration-300 bg-white/90 backdrop-blur-sm border-gray-200">
-                  <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#f8f8f8' }}>
+                <Card key={course.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
+                  <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-                      {course.type === 'Game-Based' ? <Play className="h-8 w-8" style={{ color: '#FFA566' }} /> : <Video className="h-8 w-8" style={{ color: '#FFA566' }} />}
+                      {course.type === 'Game-Based' ? <Play className="h-8 w-8" style={{ color: '#00CECE' }} /> : <Video className="h-8 w-8" style={{ color: '#00CECE' }} />}
                     </div>
                   </div>
                   <CardHeader>
                     <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg" style={{ color: '#1A0530' }}>{course.title}</CardTitle>
+                      <CardTitle className="text-lg" style={{ color: '#324047' }}>{course.title}</CardTitle>
                       <Badge 
                         variant={course.status === 'Completed' ? 'default' : 'secondary'}
-                        style={course.status === 'Completed' ? { backgroundColor: '#DA1A68', color: 'white' } : {}}
+                        style={course.status === 'Completed' ? { backgroundColor: '#00AAAA', color: 'white' } : {}}
                       >
                         {course.status}
                       </Badge>
@@ -181,15 +181,15 @@ const StudentDashboard = () => {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between text-sm mb-2">
-                          <span style={{ color: '#1A0530' }}>Progress</span>
-                          <span style={{ color: '#1A0530' }}>{course.progress}%</span>
+                          <span style={{ color: '#324047' }}>Progress</span>
+                          <span style={{ color: '#324047' }}>{course.progress}%</span>
                         </div>
                         <Progress value={course.progress} className="h-2" />
                       </div>
                       <Button 
                         className="w-full text-white hover:opacity-90" 
                         variant={course.status === 'Completed' ? 'outline' : 'default'}
-                        style={course.status === 'Completed' ? { color: '#1A0530', borderColor: '#1A0530' } : { backgroundColor: '#FFA566' }}
+                        style={course.status === 'Completed' ? { color: '#324047', borderColor: '#324047' } : { backgroundColor: '#00CECE' }}
                       >
                         {course.status === 'Completed' ? 'Review Course' : 'Continue Learning'}
                       </Button>
@@ -203,20 +203,20 @@ const StudentDashboard = () => {
           <TabsContent value="assignments" className="space-y-6">
             <div className="grid gap-4">
               {upcomingAssignments.map((assignment, index) => (
-                <Card key={index} className="bg-white/90 backdrop-blur-sm border-gray-200">
+                <Card key={index} className="bg-white border-gray-200">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#f8f8f8' }}>
-                          <FileText className="h-6 w-6" style={{ color: '#FFA566' }} />
+                        <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
+                          <FileText className="h-6 w-6" style={{ color: '#00CECE' }} />
                         </div>
                         <div>
-                          <h3 className="font-semibold" style={{ color: '#1A0530' }}>{assignment.title}</h3>
+                          <h3 className="font-semibold" style={{ color: '#324047' }}>{assignment.title}</h3>
                           <p className="text-sm text-gray-600">{assignment.course}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <Badge variant="outline" style={{ borderColor: '#DA1A68', color: '#DA1A68' }}>{assignment.type}</Badge>
+                        <Badge variant="outline" style={{ borderColor: '#00AAAA', color: '#00AAAA' }}>{assignment.type}</Badge>
                         <p className="text-sm text-gray-600 mt-1">Due: {assignment.dueDate}</p>
                       </div>
                     </div>
@@ -228,31 +228,31 @@ const StudentDashboard = () => {
 
           <TabsContent value="games" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white/90 backdrop-blur-sm border-gray-200">
-                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#f8f8f8' }}>
-                  <Play className="h-16 w-16" style={{ color: '#FFA566' }} />
+              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
+                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
+                  <Play className="h-16 w-16" style={{ color: '#00CECE' }} />
                 </div>
                 <CardHeader>
-                  <CardTitle style={{ color: '#1A0530' }}>Code Quest Adventure</CardTitle>
+                  <CardTitle style={{ color: '#324047' }}>Code Quest Adventure</CardTitle>
                   <CardDescription>Learn programming through interactive challenges</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#FFA566' }}>
+                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00CECE' }}>
                     Play Now
                   </Button>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white/90 backdrop-blur-sm border-gray-200">
-                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#f8f8f8' }}>
-                  <Play className="h-16 w-16" style={{ color: '#DA1A68' }} />
+              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
+                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
+                  <Play className="h-16 w-16" style={{ color: '#00AAAA' }} />
                 </div>
                 <CardHeader>
-                  <CardTitle style={{ color: '#1A0530' }}>Math Puzzle World</CardTitle>
+                  <CardTitle style={{ color: '#324047' }}>Math Puzzle World</CardTitle>
                   <CardDescription>Solve mathematical problems in a game environment</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#DA1A68' }}>
+                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00AAAA' }}>
                     Play Now
                   </Button>
                 </CardContent>
@@ -266,14 +266,14 @@ const StudentDashboard = () => {
                 <Card 
                   key={index} 
                   className={`text-center ${achievement.earned ? 'border-2' : 'bg-gray-100'}`}
-                  style={achievement.earned ? { borderColor: '#FFA566', backgroundColor: '#fff7ed' } : {}}
+                  style={achievement.earned ? { borderColor: '#00CECE', backgroundColor: '#f0fffe' } : {}}
                 >
                   <CardContent className="p-6">
                     <div className="text-4xl mb-2">{achievement.icon}</div>
-                    <h3 className="font-semibold mb-2" style={{ color: '#1A0530' }}>{achievement.title}</h3>
+                    <h3 className="font-semibold mb-2" style={{ color: '#324047' }}>{achievement.title}</h3>
                     <Badge 
                       variant={achievement.earned ? 'default' : 'secondary'}
-                      style={achievement.earned ? { backgroundColor: '#DA1A68', color: 'white' } : {}}
+                      style={achievement.earned ? { backgroundColor: '#00AAAA', color: 'white' } : {}}
                     >
                       {achievement.earned ? 'Earned' : 'Locked'}
                     </Badge>
