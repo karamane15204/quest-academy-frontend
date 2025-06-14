@@ -17,10 +17,7 @@ const Login = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login process
     console.log('Login attempt:', { email, password, role: selectedRole });
-    
-    // Redirect based on selected role
     navigate(`/dashboard/${selectedRole}`);
   };
 
@@ -30,14 +27,14 @@ const Login = () => {
       title: 'Student',
       description: 'Access courses and track progress',
       icon: <BookOpen className="h-6 w-6" />,
-      color: 'from-teal-400 to-teal-500'
+      color: '#00CECE'
     },
     {
       id: 'teacher',
       title: 'Teacher',
       description: 'Create content and manage students',
       icon: <Users className="h-6 w-6" />,
-      color: 'from-teal-500 to-teal-600'
+      color: '#00AAAA'
     }
   ];
 
@@ -46,7 +43,6 @@ const Login = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
-        {/* Go Back Button */}
         <div className="mb-6">
           <Button 
             variant="outline" 
@@ -66,7 +62,6 @@ const Login = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleLogin} className="space-y-6">
-                {/* Role Selection */}
                 <div className="space-y-3">
                   <Label className="text-sm font-medium" style={{ color: '#324047' }}>Select Your Role</Label>
                   <div className="grid gap-3">
@@ -81,7 +76,7 @@ const Login = () => {
                         onClick={() => setSelectedRole(role.id as 'student' | 'teacher')}
                       >
                         <div className="flex items-center space-x-3">
-                          <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${role.color} flex items-center justify-center text-white`}>
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: role.color }}>
                             {role.icon}
                           </div>
                           <div className="flex-1">

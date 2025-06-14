@@ -18,7 +18,6 @@ const AdminLogin = () => {
     e.preventDefault();
     console.log('Admin login attempt:', { email, password });
     
-    // Simple demo validation - in real app this would check against database
     if (email === 'admin@example.com' && password === 'admin123') {
       navigate('/dashboard/admin');
     } else {
@@ -29,7 +28,6 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#324047' }}>
       <div className="container mx-auto px-4 py-8">
-        {/* Go Back Button */}
         <div className="mb-6">
           <Button 
             variant="outline" 

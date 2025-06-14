@@ -42,9 +42,9 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #FBF5F2 0%, #1C768F 50%, #032539 100%)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
       {/* Admin Header */}
-      <div style={{ backgroundColor: '#032539' }} className="text-white p-4">
+      <div style={{ backgroundColor: '#324047' }} className="text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Button 
@@ -69,43 +69,74 @@ const AdminDashboard = () => {
       </div>
       
       <div className="container mx-auto px-4 py-8">
-        {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2" style={{ color: '#032539' }}>Admin Dashboard</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#324047' }}>Admin Dashboard</h1>
           <p className="text-gray-600">Manage users, courses, and monitor platform performance.</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          {platformStats.map((stat, index) => (
-            <Card key={index} className={`bg-gradient-to-r ${stat.color} text-white`}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-white/80">{stat.label}</p>
-                    <p className="text-2xl font-bold">{stat.value}</p>
-                    <p className="text-sm text-white/60">{stat.change} from last month</p>
-                  </div>
-                  <div className="opacity-20">
-                    {index === 0 && <Users className="h-8 w-8" />}
-                    {index === 1 && <BookOpen className="h-8 w-8" />}
-                    {index === 2 && <Award className="h-8 w-8" />}
-                    {index === 3 && <Calendar className="h-8 w-8" />}
-                  </div>
+          <Card style={{ backgroundColor: '#00CECE', color: 'white' }}>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-white/80">Total Users</p>
+                  <p className="text-2xl font-bold">2,847</p>
+                  <p className="text-sm text-white/60">+12% from last month</p>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+                <Users className="h-8 w-8 opacity-20" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card style={{ backgroundColor: '#00AAAA', color: 'white' }}>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-white/80">Active Courses</p>
+                  <p className="text-2xl font-bold">156</p>
+                  <p className="text-sm text-white/60">+8% from last month</p>
+                </div>
+                <BookOpen className="h-8 w-8 opacity-20" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card style={{ backgroundColor: '#324047', color: 'white' }}>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-white/80">Monthly Revenue</p>
+                  <p className="text-2xl font-bold">$24,890</p>
+                  <p className="text-sm text-white/60">+15% from last month</p>
+                </div>
+                <Award className="h-8 w-8 opacity-20" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #00CECE, #324047)' }}>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-white/80">Completion Rate</p>
+                  <p className="text-2xl font-bold">87%</p>
+                  <p className="text-sm text-white/60">+3% from last month</p>
+                </div>
+                <Calendar className="h-8 w-8 opacity-20" />
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5 bg-white/80 backdrop-blur-sm">
-            <TabsTrigger value="overview" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Overview</TabsTrigger>
-            <TabsTrigger value="users" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Users</TabsTrigger>
-            <TabsTrigger value="courses" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Courses</TabsTrigger>
-            <TabsTrigger value="analytics" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Analytics</TabsTrigger>
-            <TabsTrigger value="settings" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Settings</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-5 bg-white">
+            <TabsTrigger value="overview" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white">Overview</TabsTrigger>
+            <TabsTrigger value="users" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white">Users</TabsTrigger>
+            <TabsTrigger value="courses" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white">Courses</TabsTrigger>
+            <TabsTrigger value="analytics" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white">Analytics</TabsTrigger>
+            <TabsTrigger value="settings" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">

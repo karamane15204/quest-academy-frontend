@@ -52,16 +52,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #FBF5F2 0%, #1C768F 50%, #032539 100%)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center max-w-4xl mx-auto">
-          <Badge className="mb-4 text-white" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
+          <Badge className="mb-4 text-white" style={{ backgroundColor: '#00CECE' }}>
             Next Generation Learning Platform
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #032539 0%, #1C768F 50%, #FA991C 100%)' }}>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#324047' }}>
             Welcome to E-Learn Platform
           </h1>
           <p className="text-xl mb-8 leading-relaxed text-gray-700">
@@ -71,49 +71,49 @@ const Index = () => {
           
           {/* Role Selection Cards */}
           <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-orange-300 bg-white/90 backdrop-blur-sm" 
+            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-teal-300 bg-white" 
                   onClick={() => handleRoleSelect('student')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00CECE' }}>
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#032539' }}>Student Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Student Portal</CardTitle>
                 <CardDescription>Access courses, track progress, and learn interactively</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00CECE' }}>
                   Enter as Student <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-teal-300 bg-white/90 backdrop-blur-sm" 
+            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-teal-300 bg-white" 
                   onClick={() => handleRoleSelect('teacher')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ background: 'linear-gradient(135deg, #1C768F 0%, #032539 100%)' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00AAAA' }}>
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#032539' }}>Teacher Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Teacher Portal</CardTitle>
                 <CardDescription>Create content, manage students, and track performance</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white" style={{ background: 'linear-gradient(135deg, #1C768F 0%, #032539 100%)' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00AAAA' }}>
                   Enter as Teacher <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-blue-300 bg-white/90 backdrop-blur-sm" 
+            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('admin')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ background: 'linear-gradient(135deg, #032539 0%, #FA991C 100%)' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#324047' }}>
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#032539' }}>Admin Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Admin Portal</CardTitle>
                 <CardDescription>Manage platform, users, and system settings</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white" style={{ background: 'linear-gradient(135deg, #032539 0%, #FA991C 100%)' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#324047' }}>
                   Enter as Admin <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -123,21 +123,21 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white/50 backdrop-blur-sm">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#032539' }}>Powerful Learning Features</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#324047' }}>Powerful Learning Features</h2>
             <p className="text-xl text-gray-600">Everything you need for effective online education</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 bg-white/90">
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 bg-white">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#FBF5F2', color: '#1C768F' }}>
+                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#EFEFEF', color: '#00CECE' }}>
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl" style={{ color: '#032539' }}>{feature.title}</CardTitle>
+                  <CardTitle className="text-xl" style={{ color: '#324047' }}>{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">{feature.description}</CardDescription>
@@ -149,15 +149,15 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20">
+      <section className="py-20" style={{ backgroundColor: '#EFEFEF' }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
+                <div className="text-4xl font-bold" style={{ color: '#00CECE' }}>
                   {stat.number}
                 </div>
-                <div className="font-medium" style={{ color: '#032539' }}>{stat.label}</div>
+                <div className="font-medium" style={{ color: '#324047' }}>{stat.label}</div>
               </div>
             ))}
           </div>
