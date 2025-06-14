@@ -14,7 +14,11 @@ const Index = () => {
 
   const handleRoleSelect = (role: 'student' | 'teacher' | 'admin') => {
     setUserRole(role);
-    navigate(`/dashboard/${role}`);
+    if (role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate(`/dashboard/${role}`);
+    }
   };
 
   const features = [
