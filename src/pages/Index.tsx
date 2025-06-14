@@ -52,16 +52,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center max-w-4xl mx-auto">
-          <Badge className="mb-4 text-white" style={{ backgroundColor: '#00CECE' }}>
+          <Badge className="mb-4 text-white" style={{ backgroundColor: '#99CDD8' }}>
             Next Generation Learning Platform
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#324047' }}>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#657165' }}>
             Welcome to E-Learn Platform
           </h1>
           <p className="text-xl mb-8 leading-relaxed text-gray-700">
@@ -71,33 +71,33 @@ const Index = () => {
           
           {/* Role Selection Cards */}
           <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-teal-300 bg-white" 
+            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('student')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00CECE' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#99CDD8' }}>
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Student Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Student Portal</CardTitle>
                 <CardDescription>Access courses, track progress, and learn interactively</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00CECE' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#99CDD8' }}>
                   Enter as Student <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-teal-300 bg-white" 
+            <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('teacher')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00AAAA' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#E8B4B8' }}>
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Teacher Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Teacher Portal</CardTitle>
                 <CardDescription>Create content, manage students, and track performance</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00AAAA' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#E8B4B8' }}>
                   Enter as Teacher <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -106,14 +106,14 @@ const Index = () => {
             <Card className="cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-gray-300 bg-white" 
                   onClick={() => handleRoleSelect('admin')}>
               <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#324047' }}>
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#657165' }}>
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl" style={{ color: '#324047' }}>Admin Portal</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#657165' }}>Admin Portal</CardTitle>
                 <CardDescription>Manage platform, users, and system settings</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#324047' }}>
+                <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#657165' }}>
                   Enter as Admin <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -126,7 +126,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#324047' }}>Powerful Learning Features</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#657165' }}>Powerful Learning Features</h2>
             <p className="text-xl text-gray-600">Everything you need for effective online education</p>
           </div>
           
@@ -134,10 +134,10 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 bg-white">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#EFEFEF', color: '#00CECE' }}>
+                  <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#F7DDD2', color: '#E8B4B8' }}>
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl" style={{ color: '#324047' }}>{feature.title}</CardTitle>
+                  <CardTitle className="text-xl" style={{ color: '#657165' }}>{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">{feature.description}</CardDescription>
@@ -149,15 +149,15 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20" style={{ backgroundColor: '#EFEFEF' }}>
+      <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold" style={{ color: '#00CECE' }}>
+                <div className="text-4xl font-bold" style={{ color: '#99CDD8' }}>
                   {stat.number}
                 </div>
-                <div className="font-medium" style={{ color: '#324047' }}>{stat.label}</div>
+                <div className="font-medium" style={{ color: '#657165' }}>{stat.label}</div>
               </div>
             ))}
           </div>

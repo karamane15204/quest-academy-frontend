@@ -26,7 +26,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#324047' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#657165' }}>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Button 
@@ -42,10 +42,10 @@ const AdminLogin = () => {
         <div className="max-w-md mx-auto">
           <Card className="shadow-2xl bg-white/95 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#00AAAA' }}>
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#E8B4B8' }}>
                 <Shield className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-2xl font-bold" style={{ color: '#324047' }}>Admin Access</CardTitle>
+              <CardTitle className="text-2xl font-bold" style={{ color: '#657165' }}>Admin Access</CardTitle>
               <CardDescription className="text-gray-600">
                 Restricted area - Authorized personnel only
               </CardDescription>
@@ -62,7 +62,7 @@ const AdminLogin = () => {
 
               <form onSubmit={handleAdminLogin} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email" style={{ color: '#324047' }}>Email</Label>
+                  <Label htmlFor="email" style={{ color: '#657165' }}>Email</Label>
                   <Input
                     id="email"
                     type="email"
@@ -75,7 +75,7 @@ const AdminLogin = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password" style={{ color: '#324047' }}>Password</Label>
+                  <Label htmlFor="password" style={{ color: '#657165' }}>Password</Label>
                   <Input
                     id="password"
                     type="password"
@@ -90,7 +90,7 @@ const AdminLogin = () => {
                 <Button 
                   type="submit" 
                   className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#00AAAA' }}
+                  style={{ backgroundColor: '#E8B4B8' }}
                 >
                   Access Admin Panel
                 </Button>
@@ -99,14 +99,14 @@ const AdminLogin = () => {
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   Not an admin?{' '}
-                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#00AAAA' }}>
+                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#E8B4B8' }}>
                     Regular login here
                   </Link>
                 </p>
               </div>
 
-              <div className="mt-4 p-3 rounded-lg" style={{ backgroundColor: '#EFEFEF' }}>
-                <p className="text-xs text-center" style={{ color: '#324047' }}>
+              <div className="mt-4 p-3 rounded-lg" style={{ backgroundColor: '#F7DDD2' }}>
+                <p className="text-xs text-center" style={{ color: '#657165' }}>
                   Demo credentials: admin@example.com / admin123
                 </p>
               </div>

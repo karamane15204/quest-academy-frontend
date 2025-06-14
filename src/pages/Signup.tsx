@@ -48,19 +48,19 @@ const Signup = () => {
       title: 'Student',
       description: 'Access courses and track progress',
       icon: <BookOpen className="h-6 w-6" />,
-      color: 'from-teal-400 to-teal-500'
+      color: '#99CDD8'
     },
     {
       id: 'teacher',
       title: 'Teacher',
       description: 'Create content and manage students',
       icon: <Users className="h-6 w-6" />,
-      color: 'from-teal-500 to-teal-600'
+      color: '#E8B4B8'
     }
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -79,35 +79,35 @@ const Signup = () => {
         <div className="max-w-md mx-auto">
           <Card className="shadow-xl bg-white">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold" style={{ color: '#324047' }}>Sign Up</CardTitle>
+              <CardTitle className="text-2xl font-bold" style={{ color: '#657165' }}>Sign Up</CardTitle>
               <CardDescription className="text-gray-600">Create your account to get started</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSignup} className="space-y-6">
                 {/* Role Selection */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium" style={{ color: '#324047' }}>Select Your Role</Label>
+                  <Label className="text-sm font-medium" style={{ color: '#657165' }}>Select Your Role</Label>
                   <div className="grid gap-3">
                     {roleOptions.map((role) => (
                       <div
                         key={role.id}
                         className={`cursor-pointer p-3 rounded-lg border-2 transition-all ${
                           selectedRole === role.id
-                            ? 'border-teal-500 bg-teal-50'
+                            ? 'border-gray-400 bg-gray-50'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                         onClick={() => setSelectedRole(role.id as 'student' | 'teacher')}
                       >
                         <div className="flex items-center space-x-3">
-                          <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${role.color} flex items-center justify-center text-white`}>
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: role.color }}>
                             {role.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium" style={{ color: '#324047' }}>{role.title}</div>
+                            <div className="font-medium" style={{ color: '#657165' }}>{role.title}</div>
                             <div className="text-sm text-gray-500">{role.description}</div>
                           </div>
                           {selectedRole === role.id && (
-                            <Badge style={{ backgroundColor: '#00CECE', color: 'white' }}>Selected</Badge>
+                            <Badge style={{ backgroundColor: '#99CDD8', color: 'white' }}>Selected</Badge>
                           )}
                         </div>
                       </div>
@@ -118,7 +118,7 @@ const Signup = () => {
                 {/* Name Inputs */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName" style={{ color: '#324047' }}>First Name</Label>
+                    <Label htmlFor="firstName" style={{ color: '#657165' }}>First Name</Label>
                     <Input
                       id="firstName"
                       name="firstName"
@@ -131,7 +131,7 @@ const Signup = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName" style={{ color: '#324047' }}>Last Name</Label>
+                    <Label htmlFor="lastName" style={{ color: '#657165' }}>Last Name</Label>
                     <Input
                       id="lastName"
                       name="lastName"
@@ -147,7 +147,7 @@ const Signup = () => {
 
                 {/* Email Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" style={{ color: '#324047' }}>Email</Label>
+                  <Label htmlFor="email" style={{ color: '#657165' }}>Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -162,7 +162,7 @@ const Signup = () => {
 
                 {/* Password Inputs */}
                 <div className="space-y-2">
-                  <Label htmlFor="password" style={{ color: '#324047' }}>Password</Label>
+                  <Label htmlFor="password" style={{ color: '#657165' }}>Password</Label>
                   <Input
                     id="password"
                     name="password"
@@ -176,7 +176,7 @@ const Signup = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword" style={{ color: '#324047' }}>Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" style={{ color: '#657165' }}>Confirm Password</Label>
                   <Input
                     id="confirmPassword"
                     name="confirmPassword"
@@ -193,7 +193,7 @@ const Signup = () => {
                 <Button 
                   type="submit" 
                   className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#00CECE' }}
+                  style={{ backgroundColor: '#99CDD8' }}
                 >
                   Create Account
                 </Button>
@@ -203,7 +203,7 @@ const Signup = () => {
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   Already have an account?{' '}
-                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#00AAAA' }}>
+                  <Link to="/login" className="font-medium hover:underline" style={{ color: '#E8B4B8' }}>
                     Sign in here
                   </Link>
                 </p>
