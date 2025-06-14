@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Users, BookOpen, Award, Calendar, Settings, Plus, UserPlus, BookPlus, ArrowLeft } from 'lucide-react';
+import { Users, BookOpen, Award, Calendar, Settings, Plus, UserPlus, BookPlus, ArrowLeft, LogOut } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 const AdminDashboard = () => {
@@ -43,21 +43,32 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-      <Navbar />
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* Go Back Button */}
-        <div className="mb-6">
+      {/* Admin Header */}
+      <div className="bg-gray-900 text-white p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/admin')}
+              className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Admin Login
+            </Button>
+            <h1 className="text-xl font-bold">Admin Panel</h1>
+          </div>
           <Button 
-            variant="outline" 
-            onClick={() => navigate('/')}
-            className="flex items-center gap-2"
+            variant="outline"
+            onClick={() => navigate('/admin')}
+            className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
           >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
+            <LogOut className="h-4 w-4" />
+            Logout
           </Button>
         </div>
-
+      </div>
+      
+      <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
