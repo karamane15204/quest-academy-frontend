@@ -26,10 +26,17 @@ const Navbar = () => {
             <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-colors">Courses</a>
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+            <Button 
+              variant="outline" 
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              onClick={() => window.location.href = '/login'}
+            >
               Sign In
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              onClick={() => window.location.href = '/signup'}
+            >
               Get Started
             </Button>
           </div>
@@ -55,10 +62,17 @@ const Navbar = () => {
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+                <Button 
+                  variant="outline" 
+                  className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  onClick={() => window.location.href = '/login'}
+                >
                   Sign In
                 </Button>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                <Button 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  onClick={() => window.location.href = '/signup'}
+                >
                   Get Started
                 </Button>
               </div>
