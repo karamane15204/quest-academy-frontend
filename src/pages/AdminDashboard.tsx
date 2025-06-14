@@ -14,10 +14,10 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   const platformStats = [
-    { label: "Total Users", value: "2,847", change: "+12%", color: "from-blue-500 to-blue-600" },
-    { label: "Active Courses", value: "156", change: "+8%", color: "from-green-500 to-green-600" },
-    { label: "Monthly Revenue", value: "$24,890", change: "+15%", color: "from-purple-500 to-purple-600" },
-    { label: "Completion Rate", value: "87%", change: "+3%", color: "from-orange-500 to-orange-600" }
+    { label: "Total Users", value: "2,847", change: "+12%", color: "from-orange-500 to-orange-600" },
+    { label: "Active Courses", value: "156", change: "+8%", color: "from-teal-500 to-teal-600" },
+    { label: "Monthly Revenue", value: "$24,890", change: "+15%", color: "from-indigo-500 to-indigo-600" },
+    { label: "Completion Rate", value: "87%", change: "+3%", color: "from-rose-500 to-rose-600" }
   ];
 
   const users = [
@@ -42,9 +42,9 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #FBF5F2 0%, #1C768F 50%, #032539 100%)' }}>
       {/* Admin Header */}
-      <div className="bg-gray-900 text-white p-4">
+      <div style={{ backgroundColor: '#032539' }} className="text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Button 
@@ -71,8 +71,8 @@ const AdminDashboard = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
-          <p className="text-muted-foreground">Manage users, courses, and monitor platform performance.</p>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: '#032539' }}>Admin Dashboard</h1>
+          <p className="text-gray-600">Manage users, courses, and monitor platform performance.</p>
         </div>
 
         {/* Stats Cards */}
@@ -100,20 +100,20 @@ const AdminDashboard = () => {
 
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="users">Users</TabsTrigger>
-            <TabsTrigger value="courses">Courses</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-5 bg-white/80 backdrop-blur-sm">
+            <TabsTrigger value="overview" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Overview</TabsTrigger>
+            <TabsTrigger value="users" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Users</TabsTrigger>
+            <TabsTrigger value="courses" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Courses</TabsTrigger>
+            <TabsTrigger value="analytics" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Analytics</TabsTrigger>
+            <TabsTrigger value="settings" className="data-[state=active]:bg-orange-500 data-[state=active]:text-white">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               {/* System Health */}
-              <Card>
+              <Card className="bg-white/90 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>System Health</CardTitle>
+                  <CardTitle style={{ color: '#032539' }}>System Health</CardTitle>
                   <CardDescription>Platform performance metrics</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -132,32 +132,32 @@ const AdminDashboard = () => {
               </Card>
 
               {/* Recent Activity */}
-              <Card>
+              <Card className="bg-white/90 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>Recent Platform Activity</CardTitle>
+                  <CardTitle style={{ color: '#032539' }}>Recent Platform Activity</CardTitle>
                   <CardDescription>Latest user and course activities</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#1C768F' }}></div>
                       <div>
-                        <p className="text-sm font-medium">New course "Advanced React" created</p>
-                        <p className="text-xs text-muted-foreground">2 hours ago</p>
+                        <p className="text-sm font-medium" style={{ color: '#032539' }}>New course "Advanced React" created</p>
+                        <p className="text-xs text-gray-600">2 hours ago</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#FA991C' }}></div>
                       <div>
-                        <p className="text-sm font-medium">15 new student registrations</p>
-                        <p className="text-xs text-muted-foreground">4 hours ago</p>
+                        <p className="text-sm font-medium" style={{ color: '#032539' }}>15 new student registrations</p>
+                        <p className="text-xs text-gray-600">4 hours ago</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3 p-3 bg-purple-50 rounded-lg">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#1C768F' }}></div>
                       <div>
-                        <p className="text-sm font-medium">Game engine updated to v2.1</p>
-                        <p className="text-xs text-muted-foreground">1 day ago</p>
+                        <p className="text-sm font-medium" style={{ color: '#032539' }}>Game engine updated to v2.1</p>
+                        <p className="text-xs text-gray-600">1 day ago</p>
                       </div>
                     </div>
                   </div>
@@ -168,26 +168,26 @@ const AdminDashboard = () => {
 
           <TabsContent value="users" className="space-y-6">
             <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold">User Management</h2>
-              <Button className="bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700">
+              <h2 className="text-2xl font-bold" style={{ color: '#032539' }}>User Management</h2>
+              <Button className="text-white" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
                 <UserPlus className="h-4 w-4 mr-2" />
                 Add New User
               </Button>
             </div>
 
-            <Card>
+            <Card className="bg-white/90 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <Input placeholder="Search users..." className="max-w-sm" />
                     <div className="flex space-x-2">
-                      <select className="px-3 py-2 border border-gray-300 rounded-md">
+                      <select className="px-3 py-2 border border-gray-300 rounded-md bg-white">
                         <option>All Roles</option>
                         <option>Students</option>
                         <option>Teachers</option>
                         <option>Admins</option>
                       </select>
-                      <select className="px-3 py-2 border border-gray-300 rounded-md">
+                      <select className="px-3 py-2 border border-gray-300 rounded-md bg-white">
                         <option>All Status</option>
                         <option>Active</option>
                         <option>Inactive</option>
@@ -227,8 +227,8 @@ const AdminDashboard = () => {
 
           <TabsContent value="courses" className="space-y-6">
             <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold">Course Management</h2>
-              <Button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700">
+              <h2 className="text-2xl font-bold" style={{ color: '#032539' }}>Course Management</h2>
+              <Button className="text-white" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>
                 <BookPlus className="h-4 w-4 mr-2" />
                 Add New Course
               </Button>
@@ -275,32 +275,32 @@ const AdminDashboard = () => {
           </TabsContent>
 
           <TabsContent value="analytics" className="space-y-6">
-            <Card>
+            <Card className="bg-white/90 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle>Platform Analytics</CardTitle>
+                <CardTitle style={{ color: '#032539' }}>Platform Analytics</CardTitle>
                 <CardDescription>Detailed insights and performance metrics</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                  <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <p className="text-2xl font-bold text-blue-600">85%</p>
-                    <p className="text-sm text-muted-foreground">User Engagement</p>
+                  <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                    <p className="text-2xl font-bold" style={{ color: '#1C768F' }}>85%</p>
+                    <p className="text-sm text-gray-600">User Engagement</p>
                   </div>
-                  <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <p className="text-2xl font-bold text-green-600">92%</p>
-                    <p className="text-sm text-muted-foreground">Course Completion</p>
+                  <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                    <p className="text-2xl font-bold" style={{ color: '#FA991C' }}>92%</p>
+                    <p className="text-sm text-gray-600">Course Completion</p>
                   </div>
-                  <div className="text-center p-4 bg-purple-50 rounded-lg">
-                    <p className="text-2xl font-bold text-purple-600">4.8/5</p>
-                    <p className="text-sm text-muted-foreground">Average Rating</p>
+                  <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                    <p className="text-2xl font-bold" style={{ color: '#032539' }}>4.8/5</p>
+                    <p className="text-sm text-gray-600">Average Rating</p>
                   </div>
-                  <div className="text-center p-4 bg-orange-50 rounded-lg">
-                    <p className="text-2xl font-bold text-orange-600">156</p>
-                    <p className="text-sm text-muted-foreground">Active Sessions</p>
+                  <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#FBF5F2' }}>
+                    <p className="text-2xl font-bold" style={{ color: '#1C768F' }}>156</p>
+                    <p className="text-sm text-gray-600">Active Sessions</p>
                   </div>
                 </div>
-                <div className="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground">Analytics Charts Would Go Here</p>
+                <div className="h-64 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#FBF5F2' }}>
+                  <p className="text-gray-600">Analytics Charts Would Go Here</p>
                 </div>
               </CardContent>
             </Card>
@@ -308,9 +308,9 @@ const AdminDashboard = () => {
 
           <TabsContent value="settings" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <Card>
+              <Card className="bg-white/90 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>Platform Settings</CardTitle>
+                  <CardTitle style={{ color: '#032539' }}>Platform Settings</CardTitle>
                   <CardDescription>Configure general platform options</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -326,13 +326,13 @@ const AdminDashboard = () => {
                     <Label htmlFor="game-engine">Game Engine Version</Label>
                     <Input id="game-engine" defaultValue="Unity 2023.2" />
                   </div>
-                  <Button className="w-full">Save Settings</Button>
+                  <Button className="w-full text-white" style={{ background: 'linear-gradient(135deg, #FA991C 0%, #1C768F 100%)' }}>Save Settings</Button>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="bg-white/90 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>Security Settings</CardTitle>
+                  <CardTitle style={{ color: '#032539' }}>Security Settings</CardTitle>
                   <CardDescription>Manage security and access controls</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -348,7 +348,7 @@ const AdminDashboard = () => {
                     <Label htmlFor="session-timeout">Auto Session Timeout</Label>
                     <input type="checkbox" id="session-timeout" className="rounded" defaultChecked />
                   </div>
-                  <Button className="w-full" variant="outline">Update Security</Button>
+                  <Button className="w-full" variant="outline" style={{ borderColor: '#1C768F', color: '#1C768F' }}>Update Security</Button>
                 </CardContent>
               </Card>
             </div>
