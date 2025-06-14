@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -60,7 +59,7 @@ const StudentDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EFEFEF' }}>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -69,7 +68,7 @@ const StudentDashboard = () => {
           <Button 
             variant="outline" 
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 border-gray-300 text-gray-700 hover:bg-gray-100"
+            className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Home
@@ -78,56 +77,56 @@ const StudentDashboard = () => {
 
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2" style={{ color: '#324047' }}>Welcome back, Student!</h1>
-          <p className="text-gray-600">Continue your learning journey and track your progress.</p>
+          <h1 className="text-3xl font-bold mb-2">Welcome back, Student!</h1>
+          <p className="text-muted-foreground">Continue your learning journey and track your progress.</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #00CECE, #00AAAA)' }}>
+          <Card className="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/80">Courses Enrolled</p>
+                  <p className="text-blue-100">Courses Enrolled</p>
                   <p className="text-2xl font-bold">8</p>
                 </div>
-                <BookOpen className="h-8 w-8 text-white/80" />
+                <BookOpen className="h-8 w-8 text-blue-200" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="text-white" style={{ background: 'linear-gradient(135deg, #00AAAA, #324047)' }}>
+          <Card className="bg-gradient-to-r from-green-500 to-green-600 text-white">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/80">Completed</p>
+                  <p className="text-green-100">Completed</p>
                   <p className="text-2xl font-bold">3</p>
                 </div>
-                <CheckCircle className="h-8 w-8 text-white/80" />
+                <CheckCircle className="h-8 w-8 text-green-200" />
               </div>
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#324047', color: 'white' }}>
+          <Card className="bg-gradient-to-r from-purple-500 to-purple-600 text-white">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/80">Study Hours</p>
+                  <p className="text-purple-100">Study Hours</p>
                   <p className="text-2xl font-bold">156</p>
                 </div>
-                <Clock className="h-8 w-8 text-white/80" />
+                <Clock className="h-8 w-8 text-purple-200" />
               </div>
             </CardContent>
           </Card>
 
-          <Card style={{ backgroundColor: '#00CECE', color: 'white' }}>
+          <Card className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/80">Achievements</p>
+                  <p className="text-orange-100">Achievements</p>
                   <p className="text-2xl font-bold">12</p>
                 </div>
-                <Award className="h-8 w-8 text-white/80" />
+                <Award className="h-8 w-8 text-orange-200" />
               </div>
             </CardContent>
           </Card>
@@ -135,20 +134,20 @@ const StudentDashboard = () => {
 
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 bg-white border-gray-200">
-            <TabsTrigger value="courses" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="courses" className="flex items-center gap-2">
               <BookOpen className="h-4 w-4" />
               My Courses
             </TabsTrigger>
-            <TabsTrigger value="assignments" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
+            <TabsTrigger value="assignments" className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
               Assignments
             </TabsTrigger>
-            <TabsTrigger value="games" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
+            <TabsTrigger value="games" className="flex items-center gap-2">
               <Play className="h-4 w-4" />
               Games
             </TabsTrigger>
-            <TabsTrigger value="achievements" className="flex items-center gap-2 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-700">
+            <TabsTrigger value="achievements" className="flex items-center gap-2">
               <Award className="h-4 w-4" />
               Achievements
             </TabsTrigger>
@@ -157,19 +156,16 @@ const StudentDashboard = () => {
           <TabsContent value="courses" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {courses.map((course) => (
-                <Card key={course.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
-                  <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
-                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-                      {course.type === 'Game-Based' ? <Play className="h-8 w-8" style={{ color: '#00CECE' }} /> : <Video className="h-8 w-8" style={{ color: '#00CECE' }} />}
+                <Card key={course.id} className="hover:shadow-lg transition-shadow duration-300">
+                  <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 rounded-t-lg flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                      {course.type === 'Game-Based' ? <Play className="h-8 w-8 text-blue-600" /> : <Video className="h-8 w-8 text-blue-600" />}
                     </div>
                   </div>
                   <CardHeader>
                     <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg" style={{ color: '#324047' }}>{course.title}</CardTitle>
-                      <Badge 
-                        variant={course.status === 'Completed' ? 'default' : 'secondary'}
-                        style={course.status === 'Completed' ? { backgroundColor: '#00AAAA', color: 'white' } : {}}
-                      >
+                      <CardTitle className="text-lg">{course.title}</CardTitle>
+                      <Badge variant={course.status === 'Completed' ? 'default' : 'secondary'}>
                         {course.status}
                       </Badge>
                     </div>
@@ -181,16 +177,12 @@ const StudentDashboard = () => {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between text-sm mb-2">
-                          <span style={{ color: '#324047' }}>Progress</span>
-                          <span style={{ color: '#324047' }}>{course.progress}%</span>
+                          <span>Progress</span>
+                          <span>{course.progress}%</span>
                         </div>
                         <Progress value={course.progress} className="h-2" />
                       </div>
-                      <Button 
-                        className="w-full text-white hover:opacity-90" 
-                        variant={course.status === 'Completed' ? 'outline' : 'default'}
-                        style={course.status === 'Completed' ? { color: '#324047', borderColor: '#324047' } : { backgroundColor: '#00CECE' }}
-                      >
+                      <Button className="w-full" variant={course.status === 'Completed' ? 'outline' : 'default'}>
                         {course.status === 'Completed' ? 'Review Course' : 'Continue Learning'}
                       </Button>
                     </div>
@@ -203,21 +195,21 @@ const StudentDashboard = () => {
           <TabsContent value="assignments" className="space-y-6">
             <div className="grid gap-4">
               {upcomingAssignments.map((assignment, index) => (
-                <Card key={index} className="bg-white border-gray-200">
+                <Card key={index}>
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
-                          <FileText className="h-6 w-6" style={{ color: '#00CECE' }} />
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold" style={{ color: '#324047' }}>{assignment.title}</h3>
-                          <p className="text-sm text-gray-600">{assignment.course}</p>
+                          <h3 className="font-semibold">{assignment.title}</h3>
+                          <p className="text-sm text-muted-foreground">{assignment.course}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <Badge variant="outline" style={{ borderColor: '#00AAAA', color: '#00AAAA' }}>{assignment.type}</Badge>
-                        <p className="text-sm text-gray-600 mt-1">Due: {assignment.dueDate}</p>
+                        <Badge variant="outline">{assignment.type}</Badge>
+                        <p className="text-sm text-muted-foreground mt-1">Due: {assignment.dueDate}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -228,31 +220,32 @@ const StudentDashboard = () => {
 
           <TabsContent value="games" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
-                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
-                  <Play className="h-16 w-16" style={{ color: '#00CECE' }} />
+              {/* Game-based learning content */}
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <div className="aspect-video bg-gradient-to-r from-green-100 to-blue-100 rounded-t-lg flex items-center justify-center">
+                  <Play className="h-16 w-16 text-green-600" />
                 </div>
                 <CardHeader>
-                  <CardTitle style={{ color: '#324047' }}>Code Quest Adventure</CardTitle>
+                  <CardTitle>Code Quest Adventure</CardTitle>
                   <CardDescription>Learn programming through interactive challenges</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00CECE' }}>
+                  <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
                     Play Now
                   </Button>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
-                <div className="aspect-video rounded-t-lg flex items-center justify-center" style={{ backgroundColor: '#EFEFEF' }}>
-                  <Play className="h-16 w-16" style={{ color: '#00AAAA' }} />
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <div className="aspect-video bg-gradient-to-r from-purple-100 to-pink-100 rounded-t-lg flex items-center justify-center">
+                  <Play className="h-16 w-16 text-purple-600" />
                 </div>
                 <CardHeader>
-                  <CardTitle style={{ color: '#324047' }}>Math Puzzle World</CardTitle>
+                  <CardTitle>Math Puzzle World</CardTitle>
                   <CardDescription>Solve mathematical problems in a game environment</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#00AAAA' }}>
+                  <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700">
                     Play Now
                   </Button>
                 </CardContent>
@@ -263,18 +256,11 @@ const StudentDashboard = () => {
           <TabsContent value="achievements" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {achievements.map((achievement, index) => (
-                <Card 
-                  key={index} 
-                  className={`text-center ${achievement.earned ? 'border-2' : 'bg-gray-100'}`}
-                  style={achievement.earned ? { borderColor: '#00CECE', backgroundColor: '#f0fffe' } : {}}
-                >
+                <Card key={index} className={`text-center ${achievement.earned ? 'bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200' : 'bg-gray-50'}`}>
                   <CardContent className="p-6">
                     <div className="text-4xl mb-2">{achievement.icon}</div>
-                    <h3 className="font-semibold mb-2" style={{ color: '#324047' }}>{achievement.title}</h3>
-                    <Badge 
-                      variant={achievement.earned ? 'default' : 'secondary'}
-                      style={achievement.earned ? { backgroundColor: '#00AAAA', color: 'white' } : {}}
-                    >
+                    <h3 className="font-semibold mb-2">{achievement.title}</h3>
+                    <Badge variant={achievement.earned ? 'default' : 'secondary'}>
                       {achievement.earned ? 'Earned' : 'Locked'}
                     </Badge>
                   </CardContent>
