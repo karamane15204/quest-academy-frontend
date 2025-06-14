@@ -12,30 +12,30 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#00CECE' }}>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#DA1A68' }}>
               <BookOpen className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold" style={{ color: '#324047' }}>
+            <span className="text-xl font-bold" style={{ color: '#1A0530' }}>
               E-Learn Platform
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-700 hover:text-teal-600 transition-colors">Features</a>
-            <a href="#courses" className="text-gray-700 hover:text-teal-600 transition-colors">Courses</a>
-            <a href="#about" className="text-gray-700 hover:text-teal-600 transition-colors">About</a>
-            <a href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors">Contact</a>
+            <a href="#features" className="text-gray-700 hover:text-pink-600 transition-colors">Features</a>
+            <a href="#courses" className="text-gray-700 hover:text-pink-600 transition-colors">Courses</a>
+            <a href="#about" className="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+            <a href="#contact" className="text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
             <Button 
               variant="outline" 
-              className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
+              className="border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white"
               onClick={() => window.location.href = '/login'}
             >
               Sign In
             </Button>
             <Button 
               className="text-white hover:opacity-90"
-              style={{ backgroundColor: '#00CECE' }}
+              style={{ backgroundColor: '#FFA566' }}
               onClick={() => window.location.href = '/signup'}
             >
               Get Started
@@ -58,21 +58,21 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
-              <a href="#features" className="text-gray-700 hover:text-teal-600 transition-colors">Features</a>
-              <a href="#courses" className="text-gray-700 hover:text-teal-600 transition-colors">Courses</a>
-              <a href="#about" className="text-gray-700 hover:text-teal-600 transition-colors">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors">Contact</a>
+              <a href="#features" className="text-gray-700 hover:text-pink-600 transition-colors">Features</a>
+              <a href="#courses" className="text-gray-700 hover:text-pink-600 transition-colors">Courses</a>
+              <a href="#about" className="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+              <a href="#contact" className="text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
                   variant="outline" 
-                  className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
+                  className="border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white"
                   onClick={() => window.location.href = '/login'}
                 >
                   Sign In
                 </Button>
                 <Button 
                   className="text-white hover:opacity-90"
-                  style={{ backgroundColor: '#00CECE' }}
+                  style={{ backgroundColor: '#FFA566' }}
                   onClick={() => window.location.href = '/signup'}
                 >
                   Get Started
